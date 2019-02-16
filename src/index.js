@@ -1,3 +1,5 @@
+import saveProfile from './save-profile/save-profile.js';
+
 const userProfileForm = document.getElementById('user-profile');
 
 userProfileForm.addEventListener('submit', function(event) {
@@ -10,5 +12,7 @@ userProfileForm.addEventListener('submit', function(event) {
         age: userProfileFormData.get('user-age')
     };
 
-    saveProfile();
+    saveProfile(userProfile, 'userProfile');
+
+    window.location = 'first.html';
 });
