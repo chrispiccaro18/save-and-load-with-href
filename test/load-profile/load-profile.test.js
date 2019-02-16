@@ -14,6 +14,7 @@ test('Return javascript object on successful load', function(assert) {
     saveProfile(object, objectKey);
     const loadedObject = loadProfile(objectKey);
     assert.deepEqual(loadedObject, object);
+    window.localStorage.removeItem(objectKey);
 });
 
 test('Return a string to index.html if local storage is empty', function(assert) {
