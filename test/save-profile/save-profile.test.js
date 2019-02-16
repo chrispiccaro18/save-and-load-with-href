@@ -9,8 +9,9 @@ test('Save object in local storage', function(assert) {
         name: 'chris',
         age: '19'
     };
-    const objectKey = 'userProfile';
+    const objectKey = 'profile';
     const expected = JSON.stringify(object);
     saveProfile(object, objectKey);
     assert.equal(window.localStorage.getItem(objectKey), expected);
+    window.localStorage.removeItem(objectKey);
 });

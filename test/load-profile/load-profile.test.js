@@ -17,8 +17,8 @@ test('Return javascript object on successful load', function(assert) {
     window.localStorage.removeItem(objectKey);
 });
 
-test('Return a string to index.html if local storage is empty', function(assert) {
+test('Return null if local storage is empty', function(assert) {
     const objectKey = 'missing';
-    const indexString = loadProfile(objectKey);
-    assert.equal(indexString, 'index.html');
+    const profile = loadProfile(objectKey);
+    assert.equal(profile, null);
 });

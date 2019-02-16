@@ -1,9 +1,10 @@
 function loadProfile(key) {
     const json = window.localStorage.getItem(key);
+    let data = null;
     if(json) {
-        return JSON.parse(json);
+        data = JSON.parse(json);
     }
-    return 'index.html';
+    return data;
 }
 
 export default loadProfile;
