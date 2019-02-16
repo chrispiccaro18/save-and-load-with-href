@@ -1,11 +1,10 @@
+import loadProfile from '../load-profile/load-profile.js';
+
 const firstGreeting = document.getElementById('first-greeting');
 
-const json = window.localStorage.getItem('userProfile');
-let userProfile = {};
-if(json) {
-    userProfile = JSON.parse(json);
-} else {
-    window.location = 'index.html';
+const userProfile = loadProfile('userProfile');
+if(userProfile === 'index.html') {
+    window.location = userProfile;
 }
 
 const firstGreetingP = document.createElement('p');
